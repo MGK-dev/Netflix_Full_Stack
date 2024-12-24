@@ -11,7 +11,7 @@ import VideoBackground from './VideoBackground';
 
 export default function MovieDialog() {
   
-  const open = useSelector((store) => store.movie.open);
+  const {open, id} = useSelector((store) => store.movie);
   const dispatch = useDispatch();
 
   const handleClose = () => {
@@ -32,7 +32,7 @@ export default function MovieDialog() {
        
         <DialogContent>
           <DialogContentText id="alert-dialog-description">
-            <VideoBackground />
+            <VideoBackground movieId={id}/>
           </DialogContentText>
         </DialogContent>
         <DialogActions>

@@ -3,7 +3,7 @@ import useMovieById from "../hooks/useMovieById";
 import { useSelector } from "react-redux";
 import store from "../redux/store";
 
-const VideoBackground = ({movieId, videoComingFromModel = false}) => {
+const VideoBackground = ({movieId,}) => {
 
   const trailerMovie = useSelector(store => store.movie.trailerMovie);
 
@@ -15,7 +15,7 @@ const VideoBackground = ({movieId, videoComingFromModel = false}) => {
   return (
     <div className="w-[vw] overflow-hidden">
       <iframe
-        className={`${videoComingFromModel ? "w-[100%]" : "w-screen aspect-video"}`} 
+        className={ `w-screen aspect-video`} 
         src={`https://www.youtube.com/embed/${trailerMovie.key}?si=PWj7ck2PhGddk_tY&autoplay=1&mute=1`}
         title="YouTube video player"
         frameBorder="0"
