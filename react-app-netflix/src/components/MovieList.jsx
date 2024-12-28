@@ -4,7 +4,7 @@ import MovieCard from "./MovieCard";
 const MovieList = ({ title, movies, searchMovie = false }) => {
   // const title = props.title;
   // const movie = props.movies;
-  console.log(movies);
+  // console.log(movies);
 
   return (
     <div className="px-8">
@@ -12,7 +12,7 @@ const MovieList = ({ title, movies, searchMovie = false }) => {
       <div className="flex overflow-x-auto no-scrollbar cursor-pointer">
         <div className="flex items-center">
           {movies?.map((movie) => {
-            return <MovieCard key={movie.id} posterPath={movie.poster_path} />;
+            return <MovieCard key={movie.id} movieId={movie.id} posterPath={movie.poster_path} />;
           })}
         </div>
       </div>
